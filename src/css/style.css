@@ -64,6 +64,46 @@ button{
   width: 66.6%;
   box-sizing: border-box;
   padding: 0 10px;
+  display: block;
+  text-align: center;
+  position: relative;
+  height: auto;
+}
+
+.productImgRoundBox{
+  position: relative;
+}
+
+.productImgRound{
+  padding: 5px 7px;
+  position: absolute;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.productRoundTooltip{
+  background-color: rgba(65,65,64,.85);
+  font-size: 14px;
+  left: 0;
+  margin-top: 5px;
+  min-width: 140px;
+  opacity: 0;
+  padding: 12px 15px;
+  pointer-events: none;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  transition: all .5s;
+  color: white;
+}
+
+.productRoundTooltipPrice{
+  color: #ffda00;
+  white-space: nowrap;
+}
+
+.productRoundTooltipName{
+  font-weight: 400;
 }
 
 .productInfo{
@@ -132,7 +172,6 @@ button{
   font-size: 14px;
   height: 24px;
   outline: none;
-  /* padding: 3px 0 0; */
   width: 30px;
 }
 
