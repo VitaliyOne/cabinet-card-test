@@ -23,6 +23,10 @@ img {
   border-style: none;
 }
 
+input{
+  outline: none;
+}
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -376,4 +380,52 @@ button{
 .yellowButton:hover{
   background-color: #333333;
   color: white;
+}
+
+.modal{
+  width: 370px;
+  padding: 30px 30px 25px!important;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modalTitle{
+  font-size: 28px;
+}
+
+.modelForm{
+  margin: 20px 0;
+  position: relative;
+}
+
+.modelForm:before{
+  background: url(../img/flagRussia.svg) no-repeat 50%;
+  background-size: contain;
+  border-radius: 50%;
+  content: "";
+  height: 18px;
+  left: 15px;
+  position: absolute;
+  top: 12px;
+  width: 18px;
+}
+
+.modalInput{
+  border: 1px solid rgba(65,65,64,.1);
+  box-shadow: none;
+  font-size: 16px;
+  padding: 14px 14px 14px 50px;
+  width: 100%;
+  line-height: inherit;
+  margin: 0;
+}
+
+.modalPolicy{
+  font-size: 11px;
+  opacity: 50%;
+}
+
+.modalPolicyLink{
+  text-decoration: underline;
 }

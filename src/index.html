@@ -8,6 +8,9 @@
 	<link rel="icon" href="img/favicon.png">
 	<title>Карточка кабинета</title>
 	<link rel="stylesheet" href="css/style.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 </head>
 
 <body>
@@ -69,7 +72,7 @@
 					<span class="productDeliveryText">Доставка и монтаж</span>
 					<span>Завтра после 12:00</span>
 				</div>
-				<button class="yellowButton boldText">Заказать бесплатный эскиз</button>
+				<button href="#modal-content" data-fancybox class="yellowButton boldText">Заказать бесплатный эскиз</button>
 				<table class="productItems">
 					<tbody>
 						<tr class="productItem">
@@ -190,7 +193,7 @@
 					</div>
 					<a class="productPriceLink">Уведомить, если цена <br> будет снижена</a>
 				</div>
-				<button class="yellowButton boldText">Отправить заявку</button>
+				<button href="#modal-content" data-fancybox class="yellowButton boldText">Отправить заявку</button>
 				<div class="productQuestion">
 					Возникли вопросы? Звоните!
 					<br>
@@ -251,6 +254,16 @@
 				</div>
 				<span class="productDescriptionShow">Читать полностью</span>
 			</div>
+		</div>
+		<div id="modal-content" class="modal" style="display: none;">
+			<h1 class="modalTitle">Мы перезвоним Вам</h1>
+			<p>и поможем определиться с комплектацией, размерами и цветом мебели. А так же бесплатно составим эскизный проект и рассчитаем точную стоимости и сроки.</p>
+			<form class="modelForm">
+				<input class="modalInput" type="tel" placeholder="+7 (999) 999-99-99" required>
+				<button type="submit" class="yellowButton">Отправить заявку</button>
+			</form>
+			<p class="modalPolicy">Отправляя заявку, вы соглашаетесь</p>
+			<p class="modalPolicy">c <a class="modalPolicyLink">политикой обработки персональной информации</a></p>
 		</div>
 	</section>
 	<script src="js/index.js"></script>

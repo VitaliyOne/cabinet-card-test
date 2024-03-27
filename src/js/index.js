@@ -32,3 +32,14 @@ const productDescriptionShowOnClick = () => {
   }
 }
 productDescriptionShowOnClick();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const modalContent = document.getElementById('modal-content');
+  if (modalContent) {
+    modalContent.addEventListener('click', (event) => {
+      if (event.target === modalContent) {
+        modalContent.style.display = 'none';
+      }
+    });
+  }
+});
