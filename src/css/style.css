@@ -57,6 +57,7 @@ button{
   padding: 0 15px;
   width: 100%;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .product{
@@ -122,6 +123,7 @@ button{
   margin-bottom: 20px;
   margin-right: 20px;
   width: 100%;
+  height: 434px;
 }
 
 .productDelivery {
@@ -148,6 +150,37 @@ button{
   font-weight: 700;
 }
 
+.swiper-container{
+  overflow: hidden;
+  display: none;
+  height: 434px;
+}
+
+.swiper-pagination {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 10px;
+  left: 50%!important;
+  transform: translateX(-50%)!important;
+  width: max-content!important;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #FFFFFF!important;
+  margin: 0 5px!important;
+  width: 6px!important;
+  height: 6px!important;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: white!important;
+  width: 8px!important;
+  height: 8px!important;
+}
+
+
 .productItems{
   border: 1px solid rgba(65,65,64,.1);
   margin-top: 20px;
@@ -160,7 +193,8 @@ button{
   border-color: inherit;
 }
 
-.productItem:nth-child(2n) {
+.productItem:nth-child(2n),
+.productTableRow:nth-child(2n) {
   background-color: #f5f7f9;
 }
 
@@ -196,6 +230,10 @@ button{
   line-height: 1.2;
   font-size: 32px;
   margin-bottom: 20px;
+}
+
+.midleTitle{
+  font-size: 28px;
 }
 
 .titleMin {
@@ -249,17 +287,6 @@ button{
   text-align: right;
 }
 
-.productSomeComponents{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.productPrice{
-  font-size: 28px;
-}
-
 .productPriceLink{
   line-height: 1.5;
   margin: 0;
@@ -270,7 +297,7 @@ button{
   color: #414140;
 }
 
-.productNoComponents{
+.productComponents{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -320,10 +347,6 @@ button{
 
 .productTableRow{
   display: flex;
-}
-
-.productTableRow:nth-child(2n) {
-  background-color: #f5f7f9;
 }
 
 .productTableCell{
@@ -388,10 +411,6 @@ button{
   position: relative;
   text-align: left;
   vertical-align: middle;
-}
-
-.modalTitle{
-  font-size: 28px;
 }
 
 .modelForm{

@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css"
 		href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 
 <body>
@@ -66,6 +68,67 @@
 				<img class="productImg" src="img/gammaDirectImg2.png" alt="Кабинет Gamma Direct">
 				<img class="productImg" src="img/gammaDirectImg3.png" alt="Кабинет Gamma Direct">
 				<img class="productImg" src="img/gammaDirectImg4.png" alt="Кабинет Gamma Direct">
+			</div>
+			<div class="swiper-container productImages">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<nav class="productImgRoundBox">
+							<div class="productRound productImgRound" style="top: 40%; left: 35%">
+								1
+								<div class="productRoundTooltip">
+									<p class="productRoundTooltipName">Стол руководителя</p>
+									<p class="productRoundTooltipPrice boldText">от 27 900 руб</p>
+								</div>
+							</div>
+							<div class="productRound productImgRound" style="top: 50%; left: 60%">
+								2
+								<div class="productRoundTooltip">
+									<p class="productRoundTooltipName">Брифинг-приставка</p>
+									<p class="productRoundTooltipPrice boldText">от 14 600 руб</p>
+								</div>
+							</div>
+							<div class="productRound productImgRound" style="top: 30%; left: 35%">
+								3
+								<div class="productRoundTooltip">
+									<p class="productRoundTooltipName">Тумба с ящиками</p>
+									<p class="productRoundTooltipPrice boldText">от 10 500 руб</p>
+								</div>
+							</div>
+							<div class="productRound productImgRound" style="top: 10%; left: 20%">
+								4
+								<div class="productRoundTooltip">
+									<p class="productRoundTooltipName">Шкаф для одежды</p>
+									<p class="productRoundTooltipPrice boldText">от 55 000 руб</p>
+								</div>
+							</div>
+							<div class="productRound productImgRound" style="top: 33%; left: 18%">
+								5
+								<div class="productRoundTooltip">
+									<p class="productRoundTooltipName">Кресло руководителя</p>
+									<p class="productRoundTooltipPrice boldText">от 43 800 руб</p>
+								</div>
+							</div>
+							<div class="productRound productImgRound" style="top: 40%; left: 85%">
+								6
+								<div class="productRoundTooltip">
+									<p class="productRoundTooltipName">Кресло посетителя</p>
+									<p class="productRoundTooltipPrice boldText">от 13 500 руб</p>
+								</div>
+							</div>
+							<img class="productImg" src="img/gammaDirectImg1.png" alt="Кабинет Gamma Direct">
+						</nav>
+					</div>
+					<div class="swiper-slide">
+						<img class="productImg" src="img/gammaDirectImg2.png" alt="Кабинет Gamma Direct">
+					</div>
+					<div class="swiper-slide">
+						<img class="productImg" src="img/gammaDirectImg3.png" alt="Кабинет Gamma Direct">
+					</div>
+					<div class="swiper-slide">
+						<img class="productImg" src="img/gammaDirectImg4.png" alt="Кабинет Gamma Direct">
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
 			</div>
 			<div class="productInfo">
 				<h1 class="title">Gamma Direct</h1>
@@ -169,16 +232,16 @@
 					</tbody>
 				</table>
 				<div class="productItemsNote">*Цены указаны за 1 шт</div>
-				<div class="productNoComponents">
+				<div class="productComponents" id="NoComponents">
 					<span class="textNowrap">Цена за комплект</span>
 					<span class="productPriceWarning">
 						Чтобы увидеть цену, выберите нужные позиции в таблице
 					</span>
 				</div>
-				<div class="productSomeComponents" style="display: none;">
+				<div class="productComponents" id="SomeComponents" style="display: none;">
 					<div>
 						<p>Цена за комлект от</p>
-						<span class="productPrice boldText" id="totalPrice"></span>
+						<span class="midleTitle boldText" id="totalPrice"></span>
 					</div>
 					<a class="productPriceLink" href="#modal-content" data-fancybox>Уведомить, если цена <br> будет снижена</a>
 				</div>
@@ -245,7 +308,7 @@
 			</div>
 		</div>
 		<div id="modal-content" class="modal" style="display: none;">
-			<h1 class="modalTitle">Мы перезвоним Вам</h1>
+			<h1 class="midleTitle">Мы перезвоним Вам</h1>
 			<p>и поможем определиться с комплектацией, размерами и цветом мебели. А так же бесплатно составим эскизный проект
 				и рассчитаем точную стоимости и сроки.</p>
 			<form class="modelForm">

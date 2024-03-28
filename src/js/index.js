@@ -35,8 +35,8 @@ const productDescriptionShowOnClick = () => {
 }
 
 const updateTotalPriceVisibility = (totalPrice) => {
-  const productNoComponents = document.querySelector('.productNoComponents');
-  const productSomeComponents = document.querySelector('.productSomeComponents');
+  const productNoComponents = document.getElementById('NoComponents');
+  const productSomeComponents = document.getElementById('SomeComponents');
 
   if (productNoComponents && productSomeComponents) {
     if (totalPrice !== 0) {
@@ -91,6 +91,22 @@ const addCounterButtonsEventListeners = () => {
     })
   }
 }
+
+const swiper = new Swiper('.swiper-container', {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  speed: 1000,
+  autoplay: {
+    delay: 3000,
+    pauseOnMouseEnter: true,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   setupProductImageTooltips();
