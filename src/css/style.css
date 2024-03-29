@@ -13,12 +13,7 @@
   font-family: 'AvenirNextCyr-Regular';
 }
 
-h1,h2,h3,h4,h5,h6 {
-  margin-bottom: 0.5rem;
-  margin-top: 0
-}
-
-p {
+h1,h2,h3,h4,h5,h6,p {
   margin-bottom: 0.5rem;
   margin-top: 0
 }
@@ -55,6 +50,25 @@ button{
   border: none;
   cursor: pointer;
   transition: all .5s;
+}
+
+.title{
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.midleTitle{
+  font-size: 28px;
+}
+
+.titleMin {
+  font-size: 24px;
+}
+
+.boldText{
+  font-weight: 700;
 }
 
 .textNowrap{
@@ -242,25 +256,6 @@ button{
   font-weight: 700;
   min-width: 20px;
   padding: 8px 3px;
-}
-
-.title{
-  font-weight: 700;
-  line-height: 1.2;
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.midleTitle{
-  font-size: 28px;
-}
-
-.titleMin {
-  font-size: 24px;
-}
-
-.boldText{
-  font-weight: 700;
 }
 
 .productItemCounter{
