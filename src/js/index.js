@@ -92,6 +92,40 @@ const addCounterButtonsEventListeners = () => {
   }
 }
 
+const telephoneNumberMask = () => {
+  const mask = (event) => {
+    const input = event.target;
+    const keyCode = event.keyCode;
+    let pos = input.selectionStart;
+    if (pos < 3) {
+      event.preventDefault();
+    }
+    const matrix = "+7 (___) ___ ____";
+    let i = 0;
+    const val = input.value.replace(/\D/g, "");
+    let new_value = matrix.replace(/[_\d]/g, (a) => i < val.length ? val.charAt(i++) : a);
+    i = new_value.indexOf("_");
+    if (i !== -1) {
+      i < 5 && (i = 3);
+      new_value = new_value.slice(0, i);
+    }
+    const reg = new RegExp("^" + matrix.substr(0, input.value.length).replace(/_+/g, (a) => "\\d{1," + a.length + "}").replace(/[+()]/g, "\\$&") + "$");
+    if (!reg.test(input.value) || input.value.length < 5 || (keyCode > 47 && keyCode < 58)) {
+      input.value = new_value;
+    }
+    if (event.type === "blur" && input.value.length < 5) {
+      input.value = "";
+    }
+  };
+  const telInputs = document.querySelectorAll('.modalInput');
+  telInputs.forEach((input) => {
+    input.addEventListener("input", mask);
+    // input.addEventListener("focus", mask);
+    input.addEventListener("blur", mask);
+    input.addEventListener("keydown", mask);
+  });
+}
+
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -113,4 +147,5 @@ document.addEventListener('DOMContentLoaded', () => {
   productDescriptionShowOnClick();
   updateTotalPrice();
   addCounterButtonsEventListeners();
+  telMask();
 });
