@@ -92,45 +92,40 @@ const addCounterButtonsEventListeners = () => {
   }
 }
 
-const telephoneNumberMask = () => {
-  const mask = (event) => {
-    const input = event.target;
-    const keyCode = event.keyCode;
-    let pos = input.selectionStart;
-    if (pos < 3) {
-      event.preventDefault();
+const phoneNumberMask = () => {
+  const eventCalllback = (e) => {
+    let el = e.target,
+      clearVal = el.dataset.phoneClear,
+      pattern = el.dataset.phonePattern,
+      matrix_def = "+7 (___) ___-__-__",
+      matrix = pattern ? pattern : matrix_def,
+      i = 0,
+      def = matrix.replace(/\D/g, ""),
+      val = e.target.value.replace(/\D/g, "");
+    if (clearVal !== 'false' && e.type === 'blur') {
+      if (val.length < matrix.match(/([\_\d])/g).length) {
+        e.target.value = '';
+        return;
+      }
     }
-    const matrix = "+7 (___) ___ ____";
-    let i = 0;
-    const val = input.value.replace(/\D/g, "");
-    let new_value = matrix.replace(/[_\d]/g, (a) => i < val.length ? val.charAt(i++) : a);
-    i = new_value.indexOf("_");
-    if (i !== -1) {
-      i < 5 && (i = 3);
-      new_value = new_value.slice(0, i);
+    if (def.length >= val.length) val = def;
+    e.target.value = matrix.replace(/./g, function (a) {
+      return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+    });
+  }
+  let phone_inputs = document.querySelectorAll('.modalInput');
+  for (let elem of phone_inputs) {
+    for (let ev of ['input', 'blur', 'focus']) {
+      elem.addEventListener(ev, eventCalllback);
     }
-    const reg = new RegExp("^" + matrix.substr(0, input.value.length).replace(/_+/g, (a) => "\\d{1," + a.length + "}").replace(/[+()]/g, "\\$&") + "$");
-    if (!reg.test(input.value) || input.value.length < 5 || (keyCode > 47 && keyCode < 58)) {
-      input.value = new_value;
-    }
-    if (event.type === "blur" && input.value.length < 5) {
-      input.value = "";
-    }
-  };
-  const telInputs = document.querySelectorAll('.modalInput');
-  telInputs.forEach((input) => {
-    input.addEventListener("input", mask);
-    // input.addEventListener("focus", mask);
-    input.addEventListener("blur", mask);
-    input.addEventListener("keydown", mask);
-  });
-}
+  }
+};
 
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 30,
   centeredSlides: true,
-  loop: true,
+  loop: false,
   speed: 1000,
   autoplay: {
     delay: 3000,
@@ -147,5 +142,5 @@ document.addEventListener('DOMContentLoaded', () => {
   productDescriptionShowOnClick();
   updateTotalPrice();
   addCounterButtonsEventListeners();
-  telMask();
+  phoneNumberMask();
 });
