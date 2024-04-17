@@ -30,6 +30,7 @@ img {
 
 input{
   outline: none;
+  border: none;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -238,12 +239,11 @@ button{
 }
 
 .productItemInput{
-  border: none;
   box-sizing: border-box;
   font-size: 14px;
   height: 24px;
-  outline: none;
   width: 30px;
+  background-color: white;
 }
 
 .productRound {
@@ -523,6 +523,7 @@ button{
 @media screen and (max-width: 768px) {
   .container {
     max-width: 650px;
+    margin-top: 0;
   }
 
   .title{
